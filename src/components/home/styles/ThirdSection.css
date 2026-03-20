@@ -1,0 +1,140 @@
+/* ── ServicesSection.css ── */
+
+.services-section {
+  /* background-color: #f0f4f8; */
+  padding: 60px 40px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ── Title ── */
+.services-title {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  color: #1e3a5f;
+  letter-spacing: 0.04em;
+  margin-bottom: 48px;
+}
+
+/* ── Grid: always 4 columns, scales with viewport ── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Card ── */
+.service-card {
+  border-radius: 16px;
+  padding: 20px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Image wrapper: white rounded box ── */
+.service-image-wrapper {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 100%;
+  /* Keeps the image box at a 4:3 aspect ratio */
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ── Image: contained inside the wrapper ── */
+.service-image {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+/* ── Label ── */
+.service-label {
+  font-size: clamp(0.65rem, 1.1vw, 0.8rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: white;
+  margin: 0;
+}
+
+/* ────────────────────────────────────────────
+   Responsive: keep 4 cards on all screens,
+   just shrink the gap and padding on small ones
+──────────────────────────────────────────── */
+
+/* Tablets (768px – 1023px) */
+@media (max-width: 1023px) {
+  .services-section {
+    padding: 48px 24px;
+  }
+
+  .services-grid {
+    gap: 16px;
+  }
+
+  .service-card {
+    padding: 16px 12px 20px;
+  }
+}
+
+/* Large phones (480px – 767px) */
+@media (max-width: 767px) {
+  .services-section {
+    padding: 36px 12px;
+  }
+
+  .services-grid {
+    gap: 10px;
+  }
+
+  .service-card {
+    padding: 12px 8px 14px;
+    border-radius: 12px;
+    gap: 12px;
+  }
+
+  .service-image-wrapper {
+    border-radius: 8px;
+  }
+
+  .service-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* Small phones (< 480px) */
+@media (max-width: 479px) {
+  .services-section {
+    padding: 28px 8px;
+  }
+
+  .services-grid {
+    gap: 6px;
+  }
+
+  .service-card {
+    padding: 10px 6px 12px;
+    border-radius: 10px;
+    gap: 8px;
+  }
+
+  .service-label {
+    font-size: 0.5rem;
+    letter-spacing: 0.04em;
+  }
+}

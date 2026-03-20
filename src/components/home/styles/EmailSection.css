@@ -1,0 +1,177 @@
+/* ── SECTION ── */
+
+.es-section {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("/icons/UI_UX_GitArtha_Infra-19.jpg"); /* ← your bg image */
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* ── RUPEE LOGO ── */
+
+.es-logo-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -20px; /* pulls logo slightly into the input area for overlap */
+}
+
+.es-logo {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+  /* subtle float animation */
+  animation: es-float 4s ease-in-out infinite;
+}
+
+@keyframes es-float {
+  0%,
+  100% { transform: translateY(0px); }
+  50%  { transform: translateY(-12px); }
+}
+
+/* ── EMAIL INPUT ── */
+
+.es-input-wrap {
+  position: relative;
+  z-index: 3;
+  width: 520px;
+  max-width: 90%;
+}
+
+.es-input-bar {
+  background: #1a3b52;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  padding: 16px 16px 16px 28px;
+  gap: 10px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.es-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  min-width: 0;
+}
+
+.es-input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 15px;
+}
+
+.es-submit-btn {
+  background: #1a3b52;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+}
+
+.es-submit-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ══════════════════════════════════
+   BREAKPOINTS
+══════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .es-logo {
+    width: 180px;
+  }
+
+  .es-input-wrap {
+    width: 88%;
+  }
+
+  .es-input-bar {
+    padding: 14px 14px 14px 22px;
+  }
+
+  .es-input {
+    font-size: 14px;
+  }
+
+  .es-input::placeholder {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .es-logo {
+    width: 140px;
+  }
+
+  .es-input-wrap {
+    width: 92%;
+  }
+
+  .es-input-bar {
+    padding: 12px 12px 12px 18px;
+  }
+
+  .es-input {
+    font-size: 13px;
+  }
+
+  .es-input::placeholder {
+    font-size: 13px;
+  }
+
+  .es-submit-btn {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .es-logo {
+    width: 110px;
+  }
+
+  .es-input-bar {
+    padding: 10px 10px 10px 16px;
+  }
+
+  .es-input {
+    font-size: 12px;
+  }
+
+  .es-submit-btn {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    font-size: 18px;
+  }
+}

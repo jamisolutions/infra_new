@@ -1,0 +1,209 @@
+/* ============================================================
+   ProjectSlider.css
+   Crossfade transition — no slide-in/out, no white flash
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@400;600;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Section wrapper ---------- */
+.slider-section {
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ---------- Wrapper: 16/8 aspect ratio ---------- */
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: #0a2846; /* dark fallback — prevents any white flash */
+}
+
+@supports not (aspect-ratio: 16 / 9) {
+  .slider-wrapper::before {
+    content: "";
+    display: block;
+    padding-top: 50%;
+  }
+}
+
+/* ---------- Slide base ---------- */
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 0.17s ease;
+}
+.slide__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  user-select: none;
+}
+
+.slide__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(10, 40, 70, 0.55) 0%,
+    rgba(10, 40, 70, 0.15) 55%,
+    transparent 100%
+  );
+}
+
+/* ---------- Caption ---------- */
+.slide__caption {
+  position: absolute;
+  bottom: 18%;
+  left: 6%;
+  z-index: 2;
+}
+
+.slide__subtitle {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.55rem, 1.1vw, 0.9rem);
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #a8d8ea;
+  margin-bottom: 0.4em;
+  opacity: 0.9;
+}
+
+.slide__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 4.5vw, 3.8rem);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Visibility states ---------- */
+.slide--hidden {
+  opacity: 0;
+  z-index: 0;
+  visibility: hidden;
+  transition: opacity 1.2s ease, visibility 0s linear 0.7s;
+}
+
+.slide--active {
+  opacity: 1;
+  z-index: 1;
+  visibility: visible;
+  transition: opacity 1.2s ease;
+  pointer-events: auto;
+}
+
+/* ---------- Crossfade: entering slide sits above, fades in ---------- */
+.slide--enter {
+  opacity: 0;
+  z-index: 2;
+  visibility: visible;
+  animation: fadeIn 1.8s ease forwards;
+}
+
+/* ---------- Crossfade: exiting slide sits below, fades out ---------- */
+.slide--exit {
+  opacity: 1;
+  z-index: 1;
+  visibility: visible;
+  animation: fadeOut 1.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* ---------- Caption animation on active slide ---------- */
+.slide--active .slide__caption,
+.slide--enter .slide__caption {
+  animation: captionRise 0.6s ease 0.2s both;
+}
+
+@keyframes captionRise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Dot indicators ---------- */
+.slider-dots {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+}
+
+.slider-dot {
+  height: 4px;
+  width: 28px;
+  border-radius: 2px;
+  border: none;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease, width 0.35s ease, transform 0.2s ease;
+  outline: none;
+}
+
+.slider-dot:hover {
+  background: rgba(255, 255, 255, 0.75);
+  transform: scaleY(1.4);
+}
+
+.slider-dot--active {
+  width: 52px;
+  background: #0a2846;
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 768px) {
+  .slide__caption {
+    bottom: 16%;
+    left: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-wrapper {
+    /* aspect-ratio: 1 / 1; */
+  }
+
+  .slide__caption {
+    bottom: 18%;
+    left: 5%;
+    right: 5%;
+  }
+
+  .slider-dots {
+    bottom: 6%;
+  }
+}

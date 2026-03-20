@@ -1,0 +1,140 @@
+/* ── FifthSection.css ── */
+
+.int2-section {
+  background-color: #ffffff;
+  padding: 60px 60px 70px;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ────────────────────────────
+   Main layout: two equal columns
+──────────────────────────── */
+.int2-layout {
+  display: grid;
+  grid-template-columns: 58% 1fr;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* ── LEFT: hero image ── */
+.int2-left {
+  width: 100%;
+}
+
+.int2-hero-wrapper {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.int2-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.int2-hero-wrapper:hover .int2-hero-img {
+  transform: scale(1.03);
+}
+
+/* ── RIGHT: collage image + address ── */
+.int2-right {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-end;
+}
+
+/* Right image height must match left image height.
+   Left col = 58% wide, aspect 4/3 → height ≈ 43.5% of viewport width.
+   Right col ≈ 40% wide → to reach same pixel height: ratio = 40/43.5 */
+.int2-collage-wrapper {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 5 / 3;
+}
+
+.int2-collage-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.int2-collage-wrapper:hover .int2-collage-img {
+  transform: scale(1.03);
+}
+
+/* Address — right-aligned */
+.int2-address {
+  font-style: normal;
+  /* font-size: clamp(0.72rem, 1vw, 0.88rem); */
+  line-height: 1.9;
+  color: #4a5568;
+  font-weight: 500;
+  /* text-align: justify; */
+  width: 100%;
+}
+
+/* ────────────────────────────
+   Responsive — ALWAYS 2 columns
+   just scale padding & gap down
+──────────────────────────── */
+
+@media (max-width: 1023px) {
+  .int2-section {
+    padding: 48px 32px 56px;
+  }
+  .int2-layout {
+    gap: 20px;
+  }
+  .int2-right{
+    gap:10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .int2-section {
+    padding: 36px 16px 44px;
+  }
+  .int2-layout {
+    gap: 12px;
+  }
+   .int2-right{
+    gap:40px;
+  }
+  .int2-address {
+    font-size: 0.6rem;
+    line-height: 1.7;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .int2-section {
+    padding: 24px 10px 32px;
+  }
+  .int2-layout {
+    gap: 8px;
+  }
+  .int2-address {
+    font-size: 0.5rem;
+    width: 100%;
+    /* line-height: 1.6; */
+  }
+}
+@media(max-width:380px)
+{
+  .int2-address {
+    font-size: 0.4rem;
+    width: 100%;
+    /* line-height: 1.6; */
+  }
+}

@@ -16,7 +16,7 @@ function HomePage() {
 
   return (
     <>
-    {/* <Header/> */}
+    <Header/>
     <HeroSection/>
     <FirstSection/>
     <SecondSection/>

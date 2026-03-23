@@ -1,0 +1,153 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ffffff;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* SECTION */
+.projects {
+  padding: 80px 60px;
+}
+
+/* GRID */
+.grid {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+/* CARD */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #0b1e34;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+
+  transform: translateY(30px);
+  opacity: 0;
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* SHOW */
+.card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* HOVER */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+}
+
+/* IMAGE (🔥 NEW BEST METHOD) */
+.image-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 5; /* 🔥 consistent everywhere */
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.04);
+}
+
+/* FOOTER */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px;
+}
+
+/* TITLE */
+.title {
+  color: #d4af37;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* ARROW */
+.arrow {
+  color: #d4af37;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* ===== RIPPLE ===== */
+.ripple {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-effect 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(15);
+    opacity: 0;
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* TABLET (≤1024px) */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE (≤768px) */
+@media (max-width: 768px) {
+  .projects {
+    padding: 50px 20px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 🔥 still 2 cards */
+    gap: 20px;
+  }
+}
+
+/* SMALL MOBILE (≤480px) */
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 🔥 still 2 */
+    gap: 16px;
+  }
+
+  .title {
+    font-size: 13px;
+  }
+
+  .arrow {
+    font-size: 14px;
+  }
+}

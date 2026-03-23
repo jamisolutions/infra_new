@@ -1,0 +1,131 @@
+.faq-section {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 40px 20px;
+  background: #ffffff;
+  font-family: Inter, sans-serif;
+}
+
+/* HEADING */
+.faq-heading {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #111;
+}
+
+/* ACCORDION */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ITEM */
+.accordion-item {
+  border-radius: 14px;
+  background: #f8fafc;
+  padding: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* HOVER */
+.accordion-item:hover {
+  transform: translateY(-2px);
+}
+
+/* ACTIVE CARD EFFECT */
+.accordion-item.active {
+  background: #eff6ff; /* light blue tint */
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+}
+
+/* BUTTON */
+.accordion-button {
+  width: 100%;
+  padding: 18px 22px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* QUESTION TEXT */
+.question-text {
+  position: relative;
+  padding-left: 18px;
+}
+
+/* DOT INDICATOR */
+.question-text::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #cbd5f5;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+/* ACTIVE DOT */
+.accordion-button.active .question-text::before {
+  background: #2563eb;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.6);
+}
+
+/* ACTIVE TEXT */
+.accordion-button.active {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* ICON */
+.chevron {
+  transition: all 0.3s ease;
+  color: #555;
+}
+
+.chevron.rotate {
+  transform: rotate(180deg);
+  color: #2563eb;
+}
+
+/* PANEL */
+.accordion-panel {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  padding: 0 22px;
+  color: #555;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+/* OPEN */
+.accordion-panel.open {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+  padding: 10px 22px 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .faq-heading {
+    font-size: 32px;
+  }
+
+  .accordion-button {
+    font-size: 14px;
+  }
+}

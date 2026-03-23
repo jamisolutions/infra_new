@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./styles/Project.css";
+import Header from "../components/layout/Header.jsx";
+import Footer from "../components/layout/Footer.jsx";
 
 const Project = () => {
   const { slug } = useParams();
@@ -37,6 +39,8 @@ const Project = () => {
   ];
 
   return (
+    <>
+    <Header />
     <div className="project">
 
       {/* ===== HERO ===== */}
@@ -110,6 +114,8 @@ const Project = () => {
       </section>
 
     </div>
+    <Footer />
+    </>
   );
 };
 

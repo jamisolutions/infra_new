@@ -5,25 +5,21 @@ const projects = [
   {
     id: 1,
     name: "RAJAHMUNDRY AVENUE",
-    // subtitle: "Premium Residential",
     image: "/images/35.webp",
   },
   {
     id: 2,
     name: "KRISHNA ENCLAVE",
-    // subtitle: "Luxury Apartments",
     image: "/images/36.webp",
   },
   {
     id: 3,
     name: "HYDERABAD IT PARK",
-    // subtitle: "Commercial Spaces",
     image: "/images/37.webp",
   },
    {
     id: 4,
     name: "ANOTHER PROJECT",
-    // subtitle: "Commercial Spaces",
     image: "/images/36.webp",
   },
 ];
@@ -35,7 +31,7 @@ export default function HeroSection() {
   useEffect(() => {
   const timer = setTimeout(() => {
     goTo((c) => (c + 1) % projects.length);
-  }, 5000); // change to 60000 if you want 1 minute
+  }, 7000); // change to 60000 if you want 1 minute
   return () => clearTimeout(timer);
 }, [current]);
   const goTo = (getNext) => {
@@ -71,7 +67,6 @@ export default function HeroSection() {
           } else {
             slideClass += " slide--hidden";
           }
-
           return (
             <div key={project.id} className={slideClass}>
               <img
@@ -82,7 +77,6 @@ export default function HeroSection() {
               />
               <div className="slide__overlay" />
               <div className="slide__caption">
-                <span className="slide__subtitle">{project.subtitle}</span>
                 <h2 className="slide__title">{project.name}</h2>
               </div>
             </div>

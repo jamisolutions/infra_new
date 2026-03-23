@@ -1,177 +1,148 @@
-/* ── SECTION ── */
-
-.es-section {
+/* ── MAIN SECTION ── */
+.es-hero-section {
   width: 100%;
-  min-height: 100vh;
-  background-image: url("/icons/UI_UX_GitArtha_Infra-19.jpg"); /* ← your bg image */
+  aspect-ratio: 16 / 6;
+  max-height: 100vh;
   background-size: cover;
-  background-position: center top;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+/* ── OVERLAY ── */
+.es-overlay {
+  text-align: center;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
-  box-sizing: border-box;
-  overflow: hidden;
+  gap: 24px;
 }
 
-/* ── RUPEE LOGO ── */
-
-.es-logo-wrap {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: -20px; /* pulls logo slightly into the input area for overlap */
-}
-
+/* ── LOGO ── */
 .es-logo {
-  width: 220px;
+  width: 120px;
   height: auto;
   object-fit: contain;
-  /* subtle float animation */
-  animation: es-float 4s ease-in-out infinite;
+  display: block;
 }
 
-@keyframes es-float {
-  0%,
-  100% { transform: translateY(0px); }
-  50%  { transform: translateY(-12px); }
-}
-
-/* ── EMAIL INPUT ── */
-
-.es-input-wrap {
-  position: relative;
-  z-index: 3;
-  width: 520px;
-  max-width: 90%;
-}
-
-.es-input-bar {
-  background: #1a3b52;
-  border-radius: 50px;
+/* ── INPUT CONTAINER ── */
+.es-input-container {
   display: flex;
   align-items: center;
-  padding: 16px 16px 16px 28px;
-  gap: 10px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  width: 38%;
+  min-width: 260px;
+  max-width: 540px;
+  background-color: #0d2c3f;
+  border-radius: 999px;
+  padding: 12px 10px 12px 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
+  gap: 8px;
 }
 
-.es-input {
+/* ── INPUT FIELD ── */
+.es-input-container input {
   flex: 1;
-  background: transparent;
   border: none;
   outline: none;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 400;
+  background: transparent;
+  color: white;
+  font-size: 14px;
   min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.es-input::placeholder {
+.es-input-container input::placeholder {
   color: rgba(255, 255, 255, 0.45);
-  font-size: 15px;
+  font-size: 14px;
 }
 
-.es-submit-btn {
-  background: #1a3b52;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
-  min-width: 38px;
-  color: #fff;
-  font-size: 22px;
-  line-height: 1;
-  cursor: pointer;
+/* ── ARROW BUTTON ── */
+.es-arrow-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s, border-color 0.2s;
   flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
 }
 
-.es-submit-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.6);
+.es-arrow-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.es-arrow-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.7);
+  transform: scale(1.08);
 }
 
 /* ══════════════════════════════════
    BREAKPOINTS
 ══════════════════════════════════ */
 
+@media (max-width: 1024px) {
+  .es-logo { width: 100px; }
+  .es-overlay { gap: 20px; }
+  .es-input-container { padding: 10px 8px 10px 20px; }
+  .es-input-container input { font-size: 13px; }
+  .es-input-container input::placeholder { font-size: 13px; }
+  .es-arrow-btn { width: 32px; height: 32px; }
+  .es-arrow-btn svg { width: 14px; height: 14px; }
+}
+
 @media (max-width: 768px) {
-  .es-logo {
-    width: 180px;
+  .es-logo { width: 80px; }
+  .es-overlay { gap: 16px; }
+  .es-input-container {
+    width: 70%;
+    padding: 9px 8px 9px 18px;
   }
-
-  .es-input-wrap {
-    width: 88%;
-  }
-
-  .es-input-bar {
-    padding: 14px 14px 14px 22px;
-  }
-
-  .es-input {
-    font-size: 14px;
-  }
-
-  .es-input::placeholder {
-    font-size: 14px;
-  }
+  .es-input-container input { font-size: 12px; }
+  .es-input-container input::placeholder { font-size: 12px; }
+  .es-arrow-btn { width: 28px; height: 28px; }
+  .es-arrow-btn svg { width: 13px; height: 13px; }
 }
 
 @media (max-width: 480px) {
-  .es-logo {
-    width: 140px;
+  .es-logo { width: 60px; }
+  .es-overlay { gap: 12px; }
+  .es-input-container {
+    width: 80%;
+    min-width: unset;
+    padding: 8px 6px 8px 14px;
+    gap: 6px;
   }
-
-  .es-input-wrap {
-    width: 92%;
-  }
-
-  .es-input-bar {
-    padding: 12px 12px 12px 18px;
-  }
-
-  .es-input {
-    font-size: 13px;
-  }
-
-  .es-input::placeholder {
-    font-size: 13px;
-  }
-
-  .es-submit-btn {
-    width: 34px;
-    height: 34px;
-    min-width: 34px;
-    font-size: 20px;
-  }
+  .es-input-container input { font-size: 11px; }
+  .es-input-container input::placeholder { font-size: 11px; }
+  .es-arrow-btn { width: 24px; height: 24px; }
+  .es-arrow-btn svg { width: 11px; height: 11px; }
 }
 
 @media (max-width: 360px) {
-  .es-logo {
-    width: 110px;
+  .es-logo { width: 48px; }
+  .es-overlay { gap: 10px; }
+  .es-input-container {
+    width: 85%;
+    padding: 6px 6px 6px 12px;
   }
-
-  .es-input-bar {
-    padding: 10px 10px 10px 16px;
-  }
-
-  .es-input {
-    font-size: 12px;
-  }
-
-  .es-submit-btn {
-    width: 30px;
-    height: 30px;
-    min-width: 30px;
-    font-size: 18px;
-  }
+  .es-input-container input { font-size: 10px; }
+  .es-input-container input::placeholder { font-size: 10px; }
+  .es-arrow-btn { width: 22px; height: 22px; }
+  .es-arrow-btn svg { width: 10px; height: 10px; }
 }

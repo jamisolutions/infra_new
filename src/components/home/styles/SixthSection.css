@@ -1,0 +1,78 @@
+/* ── SECTION ── */
+.ms-section {
+  width: 100%;
+  /* min-height: 300px; */
+  background-color: #0d2c3f;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  padding: 60px 170px;
+}
+.ms-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 120px;
+}
+.ms-column {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.ms-item {
+  font-size: 20px;
+  font-weight: 400;
+  color: #ffffff;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+
+  /* underline animation */
+  text-decoration: none;
+  background-image: linear-gradient(#ffffff, #ffffff);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 0% 1.5px;
+  transition: background-size 0.3s ease, color 0.3s ease;
+  padding-bottom: 2px;
+}
+
+.ms-item:hover {
+  background-size: 100% 1.5px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ══════════════════════════════════
+   BREAKPOINTS
+══════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .ms-container { gap: 80px; }
+  .ms-item      { font-size: 18px; }
+  .ms-column    { gap: 24px; }
+}
+
+@media (max-width: 768px) {
+  .ms-container { gap: 50px; }
+  .ms-item      { font-size: 16px; }
+  .ms-column    { gap: 20px; }
+  .ms-section   { padding: 48px 140px; }
+}
+
+@media (max-width: 480px) {
+  .ms-container {
+    gap: 32px;
+  }
+  .ms-item      { font-size: 14px; }
+  .ms-column    { gap: 18px; }
+  .ms-section   { padding: 40px 56px; }
+}
+
+@media (max-width: 360px) {
+  .ms-container { gap: 24px; }
+  .ms-item      { font-size: 13px; }
+  .ms-column    { gap: 16px; }
+  .ms-section   { padding: 32px 44px; }
+}

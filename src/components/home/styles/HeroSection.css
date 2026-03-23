@@ -1,29 +1,18 @@
-/* ============================================================
-   ProjectSlider.css
-   Crossfade transition — no slide-in/out, no white flash
-   ============================================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@400;600;700&display=swap');
-
 body {
   margin: 0;
   padding: 0;
 }
-
-/* ---------- Section wrapper ---------- */
 .slider-section {
   width: 100%;
   padding: 0;
   overflow: hidden;
 }
-
-/* ---------- Wrapper: 16/8 aspect ratio ---------- */
 .slider-wrapper {
   position: relative;
   width: 100%;
   aspect-ratio: 16/9;
   overflow: hidden;
-  background: #0a2846; /* dark fallback — prevents any white flash */
+  background: #0a2846;
 }
 
 @supports not (aspect-ratio: 16 / 9) {
@@ -72,21 +61,8 @@ body {
   left: 6%;
   z-index: 2;
 }
-
-.slide__subtitle {
-  display: block;
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(0.55rem, 1.1vw, 0.9rem);
-  font-weight: 600;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: #a8d8ea;
-  margin-bottom: 0.4em;
-  opacity: 0.9;
-}
-
 .slide__title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Boowie";
   font-size: clamp(1.4rem, 4.5vw, 3.8rem);
   font-weight: 300;
   letter-spacing: 0.06em;
@@ -96,15 +72,12 @@ body {
   margin: 0;
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.4);
 }
-
-/* ---------- Visibility states ---------- */
 .slide--hidden {
   opacity: 0;
   z-index: 0;
   visibility: hidden;
   transition: opacity 1.2s ease, visibility 0s linear 0.7s;
 }
-
 .slide--active {
   opacity: 1;
   z-index: 1;
@@ -112,16 +85,12 @@ body {
   transition: opacity 1.2s ease;
   pointer-events: auto;
 }
-
-/* ---------- Crossfade: entering slide sits above, fades in ---------- */
 .slide--enter {
   opacity: 0;
   z-index: 2;
   visibility: visible;
   animation: fadeIn 1.8s ease forwards;
 }
-
-/* ---------- Crossfade: exiting slide sits below, fades out ---------- */
 .slide--exit {
   opacity: 1;
   z-index: 1;
@@ -163,11 +132,11 @@ body {
 }
 
 .slider-dot {
-  height: 4px;
+  height: 6px;
   width: 28px;
   border-radius: 2px;
   border: none;
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255);
   cursor: pointer;
   padding: 0;
   transition: background 0.3s ease, width 0.35s ease, transform 0.2s ease;
@@ -183,27 +152,31 @@ body {
   width: 52px;
   background: #0a2846;
 }
-
 /* ---------- Responsive tweaks ---------- */
 @media (max-width: 768px) {
   .slide__caption {
     bottom: 16%;
     left: 5%;
+    gap: 7px;
+  }
+  .slider-dot{
+    height: 5px;
   }
 }
-
 @media (max-width: 480px) {
-  .slider-wrapper {
-    /* aspect-ratio: 1 / 1; */
-  }
-
   .slide__caption {
     bottom: 18%;
     left: 5%;
     right: 5%;
+    /* gap: 2px; */
   }
-
   .slider-dots {
-    bottom: 6%;
+    /* bottom: 6%; */
+    gap: 5px;
   }
+  .slider-dot{
+    height: 4px;
+    width: 28px;
+    }
 }
+@media (max-width:375px){.slide__title{font-size: 18px;}}

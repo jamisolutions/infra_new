@@ -64,6 +64,7 @@
 
 /* ── Label ── */
 .service-label {
+  /* font-family: "Boowie"; */
   font-size: clamp(0.65rem, 1.1vw, 0.8rem);
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -112,7 +113,7 @@
   }
 
   .service-label {
-    font-size: 0.58rem;
+    font-size: 0.5rem;
     letter-spacing: 0.05em;
   }
 }
@@ -134,7 +135,7 @@
   }
 
   .service-label {
-    font-size: 0.5rem;
+    font-size: 0.33rem;
     letter-spacing: 0.04em;
   }
 }

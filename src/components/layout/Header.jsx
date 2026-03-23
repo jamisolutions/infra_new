@@ -2,12 +2,24 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { useEffect, useRef } from "react";
 import "./styles/Header.css";
 
 const Header = () => {
+  const ref = useRef();
   const navigate = useNavigate();
-  const location = useLocation(); // 🔥 important
+  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (ref.current && !ref.current.contains(e.target)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -18,9 +30,8 @@ const Header = () => {
   ];
 
   return (
-    <nav className="nav-bar">
+    <nav className="nav-bar" ref={ref}>
       <div className="nav-content">
-
         {/* LOGO */}
         <div className="logo-container">
           <img src="/images/GitArtha.webp" alt="Logo" className="logo-image" />

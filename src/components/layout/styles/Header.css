@@ -1,32 +1,26 @@
 .nav-bar {
-  position: sticky; /* ✅ sticky */
+  position: sticky;
   top: 0;
   width: 100%;
   height: var(--header-height);
   z-index: 1000;
-
   background: #ffffff;
   border-bottom: 1px solid #e5e7eb;
-
   display: flex;
   align-items: center;
 }
 
-/* CONTENT */
 .nav-content {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   padding: 0 35px;
   height: 100%;
 }
 
-/* LOGO */
 .logo-image {
   max-height: 150px;
   width: 200px;
@@ -37,10 +31,6 @@
 .logo-image:hover {
   transform: scale(1.05);
 }
-
-/* ===========================
-   NAV LINKS (DESKTOP)
-=========================== */
 
 .nav-links {
   display: flex;
@@ -102,7 +92,6 @@
   transition: 0.3s ease;
 }
 
-/* ANIMATION */
 .menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -115,10 +104,6 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ===========================
-   MOBILE MENU
-=========================== */
-
 @media (max-width: 950px) {
   .menu-toggle {
     display: flex;
@@ -126,29 +111,34 @@
 
   .nav-links {
     position: absolute;
-    top: var(--header-height); /* aligns perfectly */
+    top: var(--header-height);
     left: 0;
     width: 100%;
-
     flex-direction: column;
-    align-items: flex-start;
-
+    align-items: center;
     background: #ffffff;
-    display: none;
     gap: 0px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     border-top: 1px solid #e5e7eb;
-
-    animation: slideDown 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
   }
 
   .nav-links.active {
-    display: flex;
+    max-height: 500px;
+    opacity: 1;
   }
 
   .nav-link {
     width: 100%;
-    padding: 24px 25px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    text-align: center;
     font-size: 15px;
     border-bottom: 1px solid #f1f1f1;
   }
@@ -166,10 +156,6 @@
   }
 }
 
-/* ===========================
-   SMALL DEVICES
-=========================== */
-
 @media (max-width: 500px) {
   .nav-content {
     padding: 0 20px;
@@ -179,12 +165,6 @@
     width: 130px;
   }
 }
-
-
-
-/* ===========================
-   ANIMATION
-=========================== */
 
 @keyframes slideDown {
   from {

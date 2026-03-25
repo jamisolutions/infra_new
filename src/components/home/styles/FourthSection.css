@@ -9,9 +9,12 @@
 /* ── Title ── */
 .interiors-title {
   font-family: "Boowie";
-  font-size: clamp(1.3rem, 2.8vw, 2rem);
+  background: linear-gradient(180deg, #001b2e, #052033);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: clamp(1.3rem, 2.8vw, 5rem);
   font-weight: 800;
-  color: #1e3a5f;
+  /* color: #1e3a5f; */
   letter-spacing: 0.04em;
   text-align: center;
   margin: 0 0 40px;
@@ -62,7 +65,8 @@
   font-style: normal;
   font-size: 16px;
   line-height: 1.85;
-  color: #4a5568;
+  /* color: #4a5568; */
+  color: #13385b;
   font-weight: 500;
   padding-left: 4px;
   width: 60%;

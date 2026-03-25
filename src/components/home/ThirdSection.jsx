@@ -11,25 +11,25 @@ const services = [
     id: 1,
     label: "LEGAL DOCUMENTS",
     image: legalImg,
-    bgColor: "#004466",
+    bgColor: "linear-gradient(to right, #046 10%, #0d0f14)",
   },
   {
     id: 2,
     label: "INTERIORS",
     image: interiorsImg,
-    bgColor: "#004466",
+    bgColor: "linear-gradient(to right, #046 10%, #0d0f14)",
   },
   {
     id: 3,
     label: "CONSTRUCTION",
     image: constructionImg,
-    bgColor: "#004466",
+    bgColor: "linear-gradient(to right, #046 10%, #0d0f14)",
   },
   {
     id: 4,
     label: "MORTGAGE LOANS",
     image: mortgageImg,
-    bgColor: "#004466",
+    bgColor: "linear-gradient(to right, #046 10%, #0d0f14)",
   },
 ];
 
@@ -42,13 +42,13 @@ const ThirdSection = () => {
           <div
             key={service.id}
             className="service-card"
-            style={{ backgroundColor: service.bgColor }}
+            style={{ background: service.bgColor }}
           >
             <div className="service-image-wrapper">
               <img
                 src={service.image}
                 alt={service.label}
-                className="service-image"
+                className={`service-image img-${service.id}`}
               />
             </div>
             <p className="service-label">{service.label}</p>

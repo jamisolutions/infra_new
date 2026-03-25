@@ -78,7 +78,8 @@
   /* font-size: clamp(0.72rem, 1vw, 0.88rem); */
   font-size: 16px;
   line-height: 1.6;
-  color: #4a5568;
+  /* color: #000000; */
+  color: #13385b;
   font-weight: 500;
   /* text-align: justify; */
   width: 100%;

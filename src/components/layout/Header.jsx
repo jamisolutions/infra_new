@@ -34,7 +34,7 @@ const Header = () => {
       <div className="nav-content">
         {/* LOGO */}
         <div className="logo-container">
-          <img src="/images/GitArtha.webp" alt="Logo" className="logo-image" />
+          <img src="/images/gitartha-logo.svg" alt="Logo" className="logo-image" />
         </div>
 
         {/* HAMBURGER */}

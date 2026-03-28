@@ -23,7 +23,11 @@
   font-family: 'Boowie', sans-serif;
   font-size: 72px;
   font-weight: normal;
-  color: #C9A84C;
+  /* color: #C9A84C; */
+  /* background: linear-gradient(180deg, #001b2e, #052033);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  color: #d4a017;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-bottom: 12px;
@@ -42,7 +46,9 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 40px;
   font-weight: 600;
-  color: #1a2535;
+  /* color: #1a2535; */
+  color: #052033;
+  /* color: #d4a017; */
   margin-bottom: 12px;
   letter-spacing: 0.01em;
 }
@@ -51,8 +57,9 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
   line-height: 1.8;
-  color: #6b7f8e;
-  font-weight: 400;
+  /* color: #6b7f8e; */
+  color: #13385b;
+  font-weight: 600;
 }
 
 .pw-cards {
@@ -84,8 +91,10 @@
 .pw-card-title {
   font-family: 'Boowie', sans-serif;
   font-size: 40px;
-  font-weight: normal;
-  color: #C9A84C;
+  font-weight: 600;
+  /* color: #C9A84C; */
+  /* color: #052033; */
+  color: #d4a017;
   letter-spacing: 0.04em;
   margin-bottom: 16px;
   line-height: 1;
@@ -103,8 +112,9 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   line-height: 1.75;
-  color: #5a6a78;
-  font-weight: 400;
+  /* color: #5a6a78; */
+  color: #13385b;
+  font-weight: 600;
 }
 
 .pw-divider {

@@ -24,7 +24,7 @@ function HomePage() {
     <FourthSection/>
     <FifthSection/>
     <ExploreSection/>
-    <SixthSection/>
+    {/* <SixthSection/> */}
     <EmailSection/>
     <Footer/>
     </>

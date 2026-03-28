@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import "./styles/HeroSection.css";
 
 const projects = [
@@ -17,7 +17,7 @@ const projects = [
     name: "HYDERABAD IT PARK",
     image: "/images/37.webp",
   },
-   {
+  {
     id: 4,
     name: "ANOTHER PROJECT",
     image: "/images/36.webp",
@@ -28,14 +28,15 @@ export default function HeroSection() {
   const [current, setCurrent] = useState(0);
   const [prev, setPrev] = useState(null);
   const [animating, setAnimating] = useState(false);
+
   useEffect(() => {
-  const timer = setTimeout(() => {
-    goTo((c) => (c + 1) % projects.length);
-  }, 7000); // change to 60000 if you want 1 minute
-  return () => clearTimeout(timer);
-}, [current]);
+    const timer = setTimeout(() => {
+      goTo((c) => (c + 1) % projects.length);
+    }, 7000);
+    return () => clearTimeout(timer);
+  }, [current]);
+
   const goTo = (getNext) => {
-    // if (animating) return;
     setCurrent((c) => {
       const next = typeof getNext === "function" ? getNext(c) : getNext;
       if (next === c) return c;
@@ -48,27 +49,30 @@ export default function HeroSection() {
       return next;
     });
   };
+
   const handleDotClick = (i) => {
     if (animating) return;
-    // stopAutoplay();
     goTo(() => i);
   };
+
   return (
     <section className="slider-section">
       <div className="slider-wrapper">
         {projects.map((project, i) => {
           let slideClass = "slide";
           if (i === current) {
-            // Entering slide — fade in on top
             slideClass += animating ? " slide--enter" : " slide--active";
           } else if (i === prev) {
-            // Exiting slide — fade out below
             slideClass += " slide--exit";
           } else {
             slideClass += " slide--hidden";
           }
           return (
-            <div key={project.id} className={slideClass}>
+            <div
+              key={project.id}
+              className={slideClass}
+              style={{ background: project.bgColor }}
+            >
               <img
                 src={project.image}
                 alt={project.name}

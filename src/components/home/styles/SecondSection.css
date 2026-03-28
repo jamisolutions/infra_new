@@ -174,7 +174,7 @@
   color: #13385b;
 }
 
-.info-arrow {
+/* .info-arrow {
   border: none;
   background: none;
   font-size: 18px;
@@ -183,6 +183,31 @@
   flex-shrink: 0;
   margin-left: 6px;
   align-self: center;
+} */
+.info-arrow {
+  /* border: none; */
+  background: white;
+  font-size: 18px;
+  cursor: pointer;
+  color: #011e32;
+  flex-shrink: 0;
+  margin-left: 6px;
+  align-self: center;
+  
+  /* Add these new lines */
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, color 0.3s ease;
+  border: 1px #001b2e solid;
+}
+
+.info-arrow:hover {
+  background: #0a2846;   /* dark blue circle on hover */
+  color: #ffffff;        /* white arrow on hover */
 }
 
 /* ── BREAKPOINTS ── */

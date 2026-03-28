@@ -1,18 +1,19 @@
+/* SECTION */
 .faq-section {
-  max-width: 1000px;
-  margin: 80px auto;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
   padding: 40px 20px;
-  background: #ffffff;
   font-family: Inter, sans-serif;
 }
 
 /* HEADING */
 .faq-heading {
   text-align: center;
-  font-size: 47px;
+  font-size: 52px;
   font-weight: 700;
-  font-family: "Boowie";
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  font-family: 'Boowie';
   color: #111;
 }
 
@@ -20,113 +21,114 @@
 .accordion {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 12px;
 }
 
 /* ITEM */
 .accordion-item {
-  border-radius: 14px;
-  background: #f8fafc;
-  padding: 5px 0;
-  transition: all 0.3s ease;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  transition: 0.25s ease;
 }
 
-/* HOVER */
 .accordion-item:hover {
-  transform: translateY(-2px);
-}
-
-/* ACTIVE CARD EFFECT */
-.accordion-item.active {
-  background: #eff6ff; /* light blue tint */
-  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
 /* BUTTON */
 .accordion-button {
   width: 100%;
-  padding: 18px 22px;
+  padding: 16px 18px;
   background: transparent;
   border: none;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
-  color: #111;
+  color: #1f2937;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
 }
 
-/* QUESTION TEXT */
+/* TEXT */
 .question-text {
   position: relative;
-  padding-left: 18px;
+  padding-left: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "Montserrat_Italic";
 }
 
-/* DOT INDICATOR */
+/* DOT */
 .question-text::before {
   content: "";
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   background: #cbd5f5;
   border-radius: 50%;
   transition: 0.3s;
 }
 
-/* ACTIVE DOT */
-.accordion-button.active .question-text::before {
-  background: #2563eb;
-  box-shadow: 0 0 8px rgba(37, 99, 235, 0.6);
-}
-
-/* ACTIVE TEXT */
+/* ACTIVE */
 .accordion-button.active {
-  color: #2563eb;
+  color: #4f46e5;
   font-weight: 600;
 }
 
-/* ICON */
+.accordion-button.active .question-text::before {
+  background: #4f46e5;
+}
+
+/* CHEVRON */
 .chevron {
-  transition: all 0.3s ease;
-  color: #555;
+  font-size: 12px;
+  transition: transform 0.3s ease;
 }
 
 .chevron.rotate {
   transform: rotate(180deg);
-  color: #2563eb;
 }
 
-/* PANEL */
+/* 🔥 PERFECT PANEL FIX */
+/* 🔥 SIMPLE PANEL (NO ANIMATION = NO JUMP) */
 .accordion-panel {
-  opacity: 0;
-  visibility: hidden;
-  height: 0;
-  overflow: hidden;
-  padding: 0 22px;
-  color: #555;
+  display: none;
+  padding: 0 18px 14px 18px;
   font-size: 14px;
-  transition: all 0.3s ease;
+  color: #4b5563;
+  line-height: 1.6;
 }
 
 /* OPEN */
 .accordion-panel.open {
-  opacity: 1;
-  visibility: visible;
-  height: auto;
-  padding: 10px 22px 20px;
+  display: block;
+}
+/* CONTENT */
+.accordion-panel p {
+  padding: 0 18px;
+  font-size: 14px;
+  font-family: "Montserrat";
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .faq-heading {
-    font-size: 32px;
-  }
-
-  .accordion-button {
-    font-size: 14px;
-  }
+/* SPACING ONLY WHEN OPEN */
+.accordion-panel.open p {
+  padding-top: 6px;
+  padding-bottom: 14px;
 }
+
+/* .accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 450px; /* 👈 important fix */
+/* } */
+

@@ -1,5 +1,7 @@
+/* MAIN SECTION */
 .contact-map-section {
-  padding: 80px 8%;
+  width: 100%;
+  padding: 6vw 6vw;
   background: #ffffff;
   font-family: Inter, sans-serif;
 }
@@ -7,66 +9,70 @@
 /* CONTAINER */
 .map-container {
   position: relative;
-  max-width: 1100px;
+  width: 100%;
+  max-width: 1200px;
   margin: auto;
+}
+
+/* MAP BOX */
+.map-box {
+  width: 100%;
+  aspect-ratio: 16 / 7; /* keeps same map shape */
 }
 
 /* MAP */
 .map-box iframe {
   width: 100%;
-  height: 400px;
+  height: 100%;
   border: none;
-  border-radius: 12px;
+  border-radius: 1.2vw;
 }
 
 /* FLOATING CARD */
 .contact-card {
   position: absolute;
   top: 50%;
-  left: -40px;
+  left: -3vw;
   transform: translateY(-50%);
+
   background: #000;
   color: white;
-  padding: 30px;
-  border-radius: 12px;
-  width: 280px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  padding: 2vw;
+  border-radius: 1vw;
+  width: 22vw;
+
+  box-shadow: 0 1vw 3vw rgba(0,0,0,0.2);
 }
 
 /* TITLE */
 .contact-card h2 {
-  margin-bottom: 20px;
-  font-size: 22px;
+  margin-bottom: 1.5vw;
+  font-family: 'Boowie';
+  font-size: 1.8vw;
 }
 
 /* ITEMS */
 .contact-item {
   display: flex;
-  gap: 12px;
-  margin-bottom: 18px;
+  gap: 1vw;
+  margin-bottom: 1.5vw;
 }
 
+/* ICON */
 .contact-item span {
-  font-size: 18px;
+  font-size: 1.4vw;
 }
 
-/* TEXT */
+/* LABEL */
 .contact-item .label {
-  font-size: 13px;
+  font-size: 1vw;
   color: #aaa;
 }
 
+/* TEXT */
 .contact-item p {
-  margin: 2px 0;
-  font-size: 14px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .contact-card {
-    position: static;
-    transform: none;
-    margin-top: 20px;
-    width: 100%;
-  }
+  margin: 0.2vw 0;
+  font-size: 1.1vw;
+  font-family: "Montserrat_Italic";
+  line-height: 1.4;
 }

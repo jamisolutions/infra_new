@@ -8,7 +8,7 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero {
   display: flex;
   min-height: 100vh;
@@ -18,18 +18,20 @@
   flex: 1;
   background: #0b1e34;
   color: white;
-  padding: 100px 80px;
+  padding: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .hero-left h1 {
-  font-size: 56px;
+  font-size: clamp(32px, 5vw, 56px);
   margin-bottom: 20px;
+  font-family: "Boowie";
 }
 
 .hero-left p {
+  font-size: clamp(14px, 1.2vw, 18px);
   color: #cfcfcf;
   margin-bottom: 25px;
   line-height: 1.6;
@@ -45,112 +47,113 @@
   object-fit: cover;
 }
 
-/* BUTTON */
-.btn {
-  background: white;
-  color: black;
-  padding: 12px 24px;
+/* BUTTONS */
+.btn, .btn-light {
+  padding: 10px 20px;
   border-radius: 30px;
   border: none;
   cursor: pointer;
 }
 
-.btn-light {
-  background: white;
-  padding: 10px 22px;
-  border-radius: 25px;
-  border: none;
-}
-
-/* ===== MOVING STATS ===== */
+/* STATS */
 .stats {
   overflow: hidden;
   background: #f3f3f3;
-  padding: 25px 0;
+  padding: 20px 0;
 }
 
 .stats-track {
   display: flex;
-  gap: 60px;
+  gap: 40px;
   width: max-content;
   animation: scroll 20s linear infinite;
 }
 
 .stat {
-  white-space: nowrap;
   font-size: 14px;
-  color: #222;
 }
 
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  to { transform: translateX(-50%); }
 }
 
-/* ===== DARK SECTION ===== */
+/* DARK */
 .dark-section {
   background: #0b1e34;
   color: white;
-  padding: 100px 80px;
+  padding: 80px;
   display: flex;
-  gap: 60px;
+  gap: 40px;
 }
 
 .dark-left h2 {
-  font-size: 48px;
+  font-size: clamp(24px, 4vw, 48px);
 }
 
 .dark-right p {
-  color: #cfcfcf;
+  font-size: clamp(14px, 1.2vw, 18px);
   margin-bottom: 20px;
 }
 
-/* ===== GALLERY (ZOOM FIXED) ===== */
+/* GALLERY */
 .gallery {
   background: #0b1e34;
-  padding: 80px;
+  padding: 60px;
   display: flex;
-  gap: 30px;
+  gap: 20px;
 }
 
-.gallery-left {
-  flex: 2;
-  border-radius: 16px;
-  overflow: hidden;
-}
-
+.gallery-left,
 .gallery-right {
-  flex: 1;
-  border-radius: 16px;
   overflow: hidden;
+  border-radius: 16px;
 }
 
-/* 🔥 ZOOM EFFECT */
+.gallery-left { flex: 2; }
+.gallery-right { flex: 1; }
+
+/* 🔥 MAIN IMAGE SETTINGS */
 .gallery img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.2);
+  transform: scale(1.35); /* zoom */
+  transition: transform 0.6s ease;
 }
 
-/* ===== FULL IMAGE ===== */
+/* 🔥 DIFFERENT VIEWS */
+.gallery-left img {
+  object-position: left center;   /* show LEFT part */
+}
+
+.gallery-right img {
+  object-position: right center;  /* show RIGHT part */
+}
+
+/* OPTIONAL HOVER */
+.gallery img:hover {
+  transform: scale(1.45);
+}
+
+/* FULL IMAGE */
 .full-img {
   background: #0b1e34;
-  padding: 40px 80px;
+  padding: 40px 60px;
 }
 
 .full-img img {
   width: 100%;
   border-radius: 16px;
   object-fit: cover;
+  object-position: center;
 }
 
-/* ===== FINAL ===== */
+/* FINAL */
 .final {
   background: #0b1e34;
-  padding: 80px;
+  padding: 60px;
   display: flex;
-  gap: 40px;
+  gap: 30px;
   align-items: center;
 }
 
@@ -162,9 +165,9 @@
 
 .final-left img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
-  transform: scale(1.1);
+  transform: scale(1.4);
+  object-position: center top; /* 🔥 TOP VIEW */
 }
 
 .final-right {
@@ -173,17 +176,17 @@
 }
 
 .final-right h2 {
-  font-size: 36px;
+  font-size: clamp(20px, 3vw, 36px);
   margin-bottom: 15px;
 }
 
 .final-right p {
-  color: #cfcfcf;
+  font-size: clamp(14px, 1.2vw, 18px);
   margin-bottom: 20px;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
+/* RESPONSIVE */
+@media (max-width: 992px) {
   .hero,
   .dark-section,
   .gallery,
@@ -191,21 +194,24 @@
     flex-direction: column;
   }
 
-  .hero-left {
-    padding: 60px 20px;
-  }
-
-  .dark-section {
-    padding: 60px 20px;
-  }
-
+  .hero-left,
+  .dark-section,
   .gallery,
-  .full-img,
   .final {
     padding: 40px 20px;
   }
 
-  .hero-left h1 {
-    font-size: 32px;
+  .hero {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    padding: 30px 15px;
+  }
+
+  .full-img {
+    padding: 20px;
   }
 }

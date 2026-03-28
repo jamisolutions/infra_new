@@ -3,10 +3,15 @@ import "./styles/ContactFaq.css";
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  // const [toogleTheme, setToogleTheme] = useState(null);
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
+
+  // const toggleTheme = (index) => {
+  //   setToogleTheme(toggleTheme === index ? null : index);
+  // }
 
   const faqs = [
     { question: "How does website version control work?", answer: "Website version control tracks changes to your site's code and content over time." },

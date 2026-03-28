@@ -6,14 +6,14 @@ const ProjectsGrid = () => {
   const navigate = useNavigate();
 
   const projects = [
-    { name: "Haven Co.", image: "/images/Haven_Co.jpg", slug: "haven-co" },
-    { name: "Lume Hotel", image: "/images/Lume_Hotel.jpg", slug: "lume-hotel" },
-    { name: "Lashhood", image: "/images/Lashhood.jpg", slug: "lashhood" },
-    { name: "Nova Market", image: "/images/Nova_Market.jpg", slug: "nova-market" },
-    { name: "Echo Residence", image: "/images/Echo_Residence.jpg", slug: "echo-residence" },
-    { name: "Zenith Tower", image: "/images/Zenith_Tower.jpg", slug: "zenith-tower" },
-    { name: "Aurora Villa", image: "/images/Aurora_Villa.jpg", slug: "aurora-villa" },
-    { name: "Pinnacle Loft", image: "/images/Pinnacle_Loft.jpg", slug: "pinnacle-loft" },
+    { name: "Haven Co.", image: "/images/Haven_Co.webp", slug: "haven-co" },
+    { name: "Lume Hotel", image: "/images/Lume_Hotel.webp", slug: "lume-hotel" },
+    { name: "Lashhood", image: "/images/Lashhood.webp", slug: "lashhood" },
+    { name: "Nova Market", image: "/images/Nova_Market.webp", slug: "nova-market" },
+    { name: "Echo Residence", image: "/images/Echo_Residence.webp", slug: "echo-residence" },
+    { name: "Zenith Tower", image: "/images/Zenith_Tower.webp", slug: "zenith-tower" },
+    { name: "Aurora Villa", image: "/images/Aurora_Villa.webp", slug: "aurora-villa" },
+    { name: "Pinnacle Loft", image: "/images/Pinnacle_Loft.webp", slug: "pinnacle-loft" },
   ];
 
   // 🔥 Scroll animation

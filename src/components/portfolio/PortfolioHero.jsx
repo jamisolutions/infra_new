@@ -3,12 +3,12 @@ import "./styles/PortfolioHero.css";
 
 const PortfolioHero = () => {
   const projects = [
-    { name: "Haven Co.", image: "/images/Haven_Co.jpg" },
-    { name: "Nova Market", image: "/images/Nova_Market.jpg" },
-    { name: "Echo Residence", image: "/images/Echo_Residence.jpg" },
-    { name: "Zenith Tower", image: "/images/Zenith_Tower.jpg" },
-    { name: "Aurora Villa", image: "/images/Aurora_Villa.jpg" },
-    { name: "Pinnacle Loft", image: "/images/Pinnacle_Loft.jpg" },
+    { name: "Haven Co.", image: "/images/Haven_Co.webp" },
+    { name: "Nova Market", image: "/images/Nova_Market.webp" },
+    { name: "Echo Residence", image: "/images/Echo_Residence.webp" },
+    { name: "Zenith Tower", image: "/images/Zenith_Tower.webp" },
+    { name: "Aurora Villa", image: "/images/Aurora_Villa.webp" },
+    { name: "Pinnacle Loft", image: "/images/Pinnacle_Loft.webp" },
   ];
 
   return (

@@ -20,7 +20,10 @@
   font-family: 'Boowie', sans-serif;
   font-size: clamp(52px, 9vw, 112px);
   font-weight: normal;
-  color: #1a2535;
+  /* color: #0a1a2f; */
+  background: linear-gradient(180deg, #001b2e, #052033);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   line-height: 0.95;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -30,7 +33,7 @@
 .ah-title-line {
   width: clamp(40px, 5vw, 72px);
   height: 2.5px;
-  background: linear-gradient(90deg, #C9A84C, #e8c96a);
+  background: linear-gradient(90deg, #C9A84C, #d4a017);
   border-radius: 2px;
 }
 
@@ -114,7 +117,8 @@
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #C9A84C;
+  color: #d4a017;
+  /* color: #052033; */
   margin-bottom: 12px;
 }
 
@@ -122,7 +126,7 @@
   font-family: 'Boowie', sans-serif;
   font-size: clamp(24px, 3.2vw, 46px);
   font-weight: normal;
-  color: #1a2535;
+  color: #052033;
   line-height: 1.15;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -132,7 +136,7 @@
 .ah-divider {
   width: 36px;
   height: 2px;
-  background: #C9A84C;
+  background: #d4a017;
   border-radius: 2px;
   margin-bottom: 22px;
 }
@@ -141,8 +145,9 @@
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(12.5px, 1.1vw, 15px);
   line-height: 1.85;
-  color: #4a5568;
-  font-weight: 400;
+  /* color: #4a5568; */
+  color: #13385b;
+  font-weight: 600;
   margin-bottom: 16px;
 }
 

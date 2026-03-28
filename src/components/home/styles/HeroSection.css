@@ -1,25 +1,25 @@
-/* body {
-  margin: 0;
-  padding: 0;
-} */
 .slider-section {
   width: 100%;
   padding: 0;
   overflow: hidden;
 }
+
 .slider-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16/9;
+ /* height: 100vh; */
+  /* Change 16/9 to match your image's actual width/height ratio */
+  aspect-ratio: 16/8;
+  /* Never exceed viewport height minus navbar */
+  /* min-height: calc(100vh - 0px); */
   overflow: hidden;
   background: #0a2846;
 }
 
+/* Fallback for browsers that don't support aspect-ratio */
 @supports not (aspect-ratio: 16 / 9) {
-  .slider-wrapper::before {
-    content: "";
-    display: block;
-    padding-top: 50%;
+  .slider-wrapper {
+    height: calc(100vh - var(--header-height, 170px));
   }
 }
 
@@ -33,12 +33,14 @@
   opacity: 0;
   z-index: 0;
   transition: opacity 0.17s ease;
+  background: #0a2846;
 }
+
 .slide__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center; /* safe with correct aspect-ratio — no cropping */
   display: block;
   user-select: none;
 }
@@ -61,6 +63,7 @@
   left: 6%;
   z-index: 2;
 }
+
 .slide__title {
   font-family: "Boowie";
   font-size: 70px;
@@ -72,12 +75,15 @@
   margin: 0;
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.4);
 }
+
+/* ---------- Slide states ---------- */
 .slide--hidden {
   opacity: 0;
   z-index: 0;
   visibility: hidden;
   transition: opacity 1.2s ease, visibility 0s linear 0.7s;
 }
+
 .slide--active {
   opacity: 1;
   z-index: 1;
@@ -85,12 +91,14 @@
   transition: opacity 1.2s ease;
   pointer-events: auto;
 }
+
 .slide--enter {
   opacity: 0;
   z-index: 2;
   visibility: visible;
   animation: fadeIn 1.8s ease forwards;
 }
+
 .slide--exit {
   opacity: 1;
   z-index: 1;
@@ -108,7 +116,7 @@
   to   { opacity: 0; }
 }
 
-/* ---------- Caption animation on active slide ---------- */
+/* ---------- Caption animation ---------- */
 .slide--active .slide__caption,
 .slide--enter .slide__caption {
   animation: captionRise 0.6s ease 0.2s both;
@@ -152,45 +160,53 @@
   width: 52px;
   background: #0a2846;
 }
+
 /* ---------- Responsive tweaks ---------- */
-@media (max-width:1186px)
-{
-    .slide__title{font-size: 60px;}
+@media (max-width: 1186px) {
+  .slide__title { font-size: 60px; }
 }
-@media (max-width:1024px)
-{
-   .slide__title{font-size: 50px;}
+
+@media (max-width: 1024px) {
+  .slide__title { font-size: 50px; }
 }
+
 @media (max-width: 768px) {
+  .slider-wrapper {
+    aspect-ratio: 16/9;   /* taller ratio on tablet */
+    max-height: none;    /* let aspect-ratio fully control height on mobile */
+  }
   .slide__caption {
     bottom: 16%;
     left: 5%;
-    gap: 7px;
   }
-  .slider-dot{
-    height: 5px;
+  .slider-dot { height: 5px; }
+  .slide__title { font-size: 39px; }
+}
+
+@media (max-width: 620px) {
+  .slider-wrapper {
+    aspect-ratio: 16/9;
   }
-   .slide__title{font-size: 39px;}
+  .slide__title { font-size: 34px; }
 }
-@media (max-width:620px)
-{
-   .slide__title{font-size: 34px;}
-}
+
 @media (max-width: 480px) {
+  .slider-wrapper {
+    aspect-ratio: 16/9;   /* square on small phones */
+  }
   .slide__caption {
     bottom: 18%;
     left: 5%;
     right: 5%;
-    /* gap: 2px; */
   }
-  .slider-dots {
-    /* bottom: 6%; */
-    gap: 5px;
-  }
-  .slider-dot{
+  .slider-dots { gap: 5px; }
+  .slider-dot {
     height: 4px;
     width: 28px;
-    }
-    .slide__title{font-size: 29px;}
+  }
+  .slide__title { font-size: 29px; }
 }
-@media (max-width:376px){.slide__title{font-size: 21px;}}
+
+@media (max-width: 376px) {
+  .slide__title { font-size: 21px; }
+}

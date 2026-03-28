@@ -3,7 +3,7 @@ import "./styles/FifthSection.css";
 
 // Replace with your actual image paths
 import heroImg from "/images/interior_3.jpg";
-import collageImg from "/images/interior_3.jpg";
+import collageImg from "/images/interior_4.jpg";
 
 const FifthSection = () => {
   return (

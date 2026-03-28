@@ -1,10 +1,10 @@
 import React from "react";
 import "./styles/ThirdSection.css";
 
-import legalImg from "/images/icon_00.png";
-import interiorsImg from "/images/icon_01.png";
-import constructionImg from "/images/icon_02.png";
-import mortgageImg from "/images/icon_03.png";
+import legalImg from "/images/icon_00.webp";
+import interiorsImg from "/images/icon_01.webp";
+import constructionImg from "/images/icon_02.webp";
+import mortgageImg from "/images/icon_03.webp";
 
 const services = [
   {

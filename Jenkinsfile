@@ -25,8 +25,8 @@ pipeline {
             steps {
                 echo "Deploying build to /var/www/html/infra"
                 sh '''
-                rm -rf /var/www/html/infra/out/*
-                cp -r out/* /var/www/html/infra/out/
+                rm -rf /var/www/html/infra/dist/*
+                cp -r dist/* /var/www/html/infra/dist/
                 '''
             }
         }
